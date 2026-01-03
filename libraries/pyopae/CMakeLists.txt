@@ -115,7 +115,7 @@ if (OPAE_BUILD_PYTHON_DIST)
     endforeach(cppfile ${PYOPAE_SRC})
 
     add_custom_target(pyopae-dist
-        COMMAND ${Python3_EXECUTABLE} -m pip install --root=${PYDIST_STAGE_DIR}/build .
+        COMMAND ${Python3_EXECUTABLE} -m pip install --ignore-installed --root=${PYDIST_STAGE_DIR}/build .
         DEPENDS ${PYFILES} ${PYOPAE_SRC}
         WORKING_DIRECTORY ${PYDIST_STAGE_DIR}
         COMMENT "Building Python distrubutions")

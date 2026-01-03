@@ -80,7 +80,7 @@ if (PLATFORM_SUPPORTS_VFIO AND OPAE_WITH_PYBIND11 AND OPAE_WITH_LIBEDIT)
 
     add_custom_command(
         OUTPUT ${OUTPUT}
-        COMMAND ${Python3_EXECUTABLE} -m pip install --root=${PYDIST_STAGE_DIR}/build .
+        COMMAND ${Python3_EXECUTABLE} -m pip install --ignore-installed --root=${PYDIST_STAGE_DIR}/build .
         COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
         WORKING_DIRECTORY ${PYDIST_STAGE_DIR}
         DEPENDS ${PYFILES} ${PKG_FILES}

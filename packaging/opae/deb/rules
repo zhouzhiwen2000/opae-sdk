@@ -27,15 +27,15 @@ override_dh_auto_configure:
 	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr -DOPAE_BUILD_PYTHON_DIST=ON -DOPAE_BUILD_FPGABIST=ON
 
 override_dh_auto_install:
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/binaries/opae.io/stage
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/binaries/hssi
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/binaries/ofs.uio
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/binaries/fpgadiag/stage
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/libraries/pyopae/stage 
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/libraries/pyopaeuio/stage 
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/opae.admin
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/packager
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/pacsign
-	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/platforms
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/binaries/opae.io/stage
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/binaries/hssi
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/binaries/ofs.uio
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/binaries/fpgadiag/stage
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/libraries/pyopae/stage 
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/obj-x86_64-linux-gnu/libraries/pyopaeuio/stage 
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/opae.admin
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/packager
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/python/pacsign
+	DEB_PYTHON_INSTALL_LAYOUT=deb_system python3 -m pip install --ignore-installed --prefix=/usr --root=$(CURDIR)/debian/tmp $(CURDIR)/platforms
 	dh_auto_install
 

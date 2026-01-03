@@ -112,7 +112,7 @@ if (OPAE_WITH_PYBIND11)
 
     add_custom_command(
         OUTPUT ${OUTPUT}
-        COMMAND ${Python3_EXECUTABLE} -m pip install --root=${PYDIST_STAGE_DIR}/build .
+        COMMAND ${Python3_EXECUTABLE} -m pip install --ignore-installed --root=${PYDIST_STAGE_DIR}/build .
         COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
         WORKING_DIRECTORY ${PYDIST_STAGE_DIR}
         DEPENDS pyproject.toml setup.py ${PKG_FILES}
